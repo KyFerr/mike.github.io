@@ -88,12 +88,24 @@
             color: #218838;
         }
     </style>
+            <script>
+                // This is a script to log out the user (by deleting the cookie) when the logout button is clicked
+                window.onload = function () {
+                    const logoutButton = document.getElementById('auth');
+                    if (logoutButton) {
+                        logoutButton.addEventListener('submit', function () {
+                            event.preventDefault()
+                            window.location.href = window.location.origin + window.location.pathname + "offbrand_nike"
+                        });
+                    }
+                };
+            </script>
 </head>
 <body>
     <div class="login-container">
         <div class="login-form">
             <h2>Login</h2>
-            <form action="offbrand_nike.html" method="get">
+            <form id = "auth">
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
