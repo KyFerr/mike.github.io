@@ -93,8 +93,9 @@
             window.onload = function () {
                 const logoutButton = document.getElementById('auth');
                 if (logoutButton) {
-                    logoutButton.addEventListener('click', function () {
-                        window.location.href = "/thankyou"
+                    logoutButton.addEventListener('submit', function () {
+                        event.preventDefault()
+                        window.location.href = window.location.origin + window.location.pathname + "thankyou"
                     });
                 }
             };
